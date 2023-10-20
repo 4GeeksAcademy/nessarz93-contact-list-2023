@@ -1,23 +1,29 @@
 import React, { Component, useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
+import "../../styles/home.css";
 
 export const CardName = (props) => {
 
     // const {store, actions} = useContext(Context)
 
 	return (
-        <>
-            <div className="card mb-3" style={{width: "540px;"}}>
+        <div className="container" style={{width: "1000px"}}>
+            <div className="card mb-3">
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src="..." className="img-fluid rounded-start" alt="..."/>
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" className="img-fluid rounded-start" alt="..."/>
                     </div>
                     <div className="col-md-8">
                         <div className="card-body">
                             <h5 className="card-title">Name</h5>
-                            <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                            <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                            <span className="card-text">Dirección</span>
+                            <span className="card-text"><small className="text-body-secondary">Teléfono</small></span>
+                            <span className="card-text"><small className="text-body-secondary">Email</small></span>
+                        </div>
+                        <div>
+                            {/*Aquí va el ícono de lapiz*/}
+                            {/*Aquí va el ícono de borrar*/}
                         </div>
                     </div>
                 </div>
@@ -36,7 +42,7 @@ export const CardName = (props) => {
                 <button type="button" className="btn btn-warning m-3" onClick={()=> actions.agregarFav()}>Add</button>
             </div>
             </div> */}
-        </>
+        </div>
     )
     };
 

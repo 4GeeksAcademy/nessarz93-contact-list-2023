@@ -1,0 +1,13 @@
+img {
+    width: 150px;
+    height: 150px;
+    margin: 10px;
+    margin-left: 100px;
+    border-radius: 50%;
+}
+
+span {
+    display: block;
+    margin: 6px;
+    color: grey;
+}
