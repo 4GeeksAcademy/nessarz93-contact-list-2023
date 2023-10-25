@@ -16,17 +16,20 @@ export const CardName = (props) => {
                         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" className="img-fluid" alt="..."/>
                     </div>
                     <div className="col-md-8">
-                        
-                        <div className="card-body">
-                            <h5 className="card-title">{item.name}</h5>
-                            <span className="card-text">{item.address}</span>
-                            <span className="card-text"><small className="text-body-secondary">Teléfono</small></span>
-                            <span className="card-text"><small className="text-body-secondary">Email</small></span>
-                        </div>
+                    {store.contacts.map((item, index) => (
                         <div>
-                            {/*Aquí va el ícono de lapiz*/}
-                            {/*Aquí va el ícono de borrar*/}
+                            <div className="card-body">
+                                <h5 className="card-title">{item.name}</h5>
+                                <span className="card-text">{item.address}</span>
+                                <span className="card-text"><small className="text-body-secondary">{item.phone}</small></span>
+                                <span className="card-text"><small className="text-body-secondary">{item.email}</small></span>
+                            </div>
+                            <div>
+                                {/*Aquí va el ícono de lapiz*/}
+                                {/*Aquí va el ícono de borrar*/}
+                            </div>
                         </div>
+                        ))};
                     </div>
                 </div>
             </div>
