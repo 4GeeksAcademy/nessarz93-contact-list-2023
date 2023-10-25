@@ -6,6 +6,11 @@ img {
     border-radius: 50%;
 }
 
+/* .rounded-start {
+    border-bottom-left-radius: 0 !important; 
+    border-top-left-radius: 0 !important;
+} */
+
 span {
     display: block;
     margin: 6px;

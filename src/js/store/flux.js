@@ -7,12 +7,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 			
 			getContacts: async () => {
 				try {
-					let response = await fetch ("https://playground.4geeks.com/apis/fake/contact")
+					let response = await fetch ("https://playground.4geeks.com/apis/fake/contact/agenda/nessarz")
 					let data = await response.json()
-					console.log(data.results)
+					console.log(data)
 
 					setStore({
-						contacts:data.results
+						contacts:data
 					})
 				} catch (error) {
 					console.log(error)
@@ -22,6 +22,5 @@ const getState = ({ getStore, getActions, setStore }) => {
 			}
 		}
 	};
-};
 
 export default getState;

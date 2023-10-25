@@ -5,19 +5,21 @@ import "../../styles/home.css";
 
 export const CardName = (props) => {
 
-    // const {store, actions} = useContext(Context)
+    const {store, actions} = useContext(Context)
+    console.log(store.contacts)
 
 	return (
         <div className="container" style={{width: "1000px"}}>
             <div className="card mb-3">
                 <div className="row g-0">
                     <div className="col-md-4">
-                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" className="img-fluid rounded-start" alt="..."/>
+                        <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" className="img-fluid" alt="..."/>
                     </div>
                     <div className="col-md-8">
+                        
                         <div className="card-body">
-                            <h5 className="card-title">Name</h5>
-                            <span className="card-text">Dirección</span>
+                            <h5 className="card-title">{item.name}</h5>
+                            <span className="card-text">{item.address}</span>
                             <span className="card-text"><small className="text-body-secondary">Teléfono</small></span>
                             <span className="card-text"><small className="text-body-secondary">Email</small></span>
                         </div>
