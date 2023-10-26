@@ -5,7 +5,7 @@ import "../../styles/home.css";
 
 export const CardName = (props) => {
 
-    const {store, actions} = useContext(Context)
+    const {store} = useContext(Context)
     console.log(store.contacts)
 
 	return (
@@ -16,37 +16,21 @@ export const CardName = (props) => {
                         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" className="img-fluid" alt="..."/>
                     </div>
                     <div className="col-md-8">
-                    {store.contacts.map((item, index) => (
                         <div>
                             <div className="card-body">
-                                <h5 className="card-title">{item.name}</h5>
-                                <span className="card-text">{item.address}</span>
-                                <span className="card-text"><small className="text-body-secondary">{item.phone}</small></span>
-                                <span className="card-text"><small className="text-body-secondary">{item.email}</small></span>
+                                <h5 className="card-title">{props.item.name}</h5>
+                                <span className="card-text">{props.item.address}</span>
+                                <span className="card-text"><small className="text-body-secondary">{props.item.phone}</small></span>
+                                <span className="card-text"><small className="text-body-secondary">{props.item.email}</small></span>
                             </div>
                             <div>
                                 {/*Aquí va el ícono de lapiz*/}
                                 {/*Aquí va el ícono de borrar*/}
                             </div>
                         </div>
-                        ))};
                     </div>
                 </div>
             </div>
-
-            {/* <div classNameName="card m-2" style={{width: "18rem"}}>
-                <img src={"https://starwars-visualguide.com/assets/img/characters/"+props.idc+".jpg"} classNameName="card-img-top" alt="..."/>
-            <div classNameName="card-body">
-                <h5 classNameName="card-title">Name: {props.name}</h5>
-                <p classNameName="card-text">
-                    Gender: {props.gender} <br/> 
-                    Hair color: {props.hair_color} <br/>
-                    Eye-color: {props.eye_color}
-                </p>
-                <Link to={"/single/" + props.idc} classNameName="btn btn-primary">Learn more</Link>
-                <button type="button" className="btn btn-warning m-3" onClick={()=> actions.agregarFav()}>Add</button>
-            </div>
-            </div> */}
         </div>
     )
     };

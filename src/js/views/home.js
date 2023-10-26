@@ -5,10 +5,16 @@ import CardName from "../component/card.js";
 
 export const Home = () => (
 	
+	const {store} = useContext(Context)
 
 	//Body//
-	
-	<div className="container">
-		<CardName/>
-	</div>
+	return (
+		<div className="container">
+			{store.contacts.map((item, index) => {
+				return (
+					<CardName key= {item.id} item={item}/>
+				)}
+			)};	
+		</div>
+	)
 );

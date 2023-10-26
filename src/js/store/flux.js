@@ -3,6 +3,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 		store: {
 			contacts: []
 		},
+		
 		actions: {
 			
 			getContacts: async () => {
