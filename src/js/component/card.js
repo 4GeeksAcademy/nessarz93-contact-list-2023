@@ -10,7 +10,8 @@ export const CardName = (props) => {
 
 	return (
         <div className="container" style={{width: "1000px"}}>
-            <div className="card mb-3">
+            {store.contacts.map((item, index) => (
+            <div className="card mb-3" key= {index}>
                 <div className="row g-0">
                     <div className="col-md-4">
                         <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png" className="img-fluid" alt="..."/>
@@ -18,10 +19,10 @@ export const CardName = (props) => {
                     <div className="col-md-8">
                         <div>
                             <div className="card-body">
-                                <h5 className="card-title">{props.item.name}</h5>
-                                <span className="card-text">{props.item.address}</span>
-                                <span className="card-text"><small className="text-body-secondary">{props.item.phone}</small></span>
-                                <span className="card-text"><small className="text-body-secondary">{props.item.email}</small></span>
+                                <h5 className="card-title">{item.full_name}</h5>
+                                <span className="card-text"><i className="fa-solid fa-location-dot"></i> {item.address}</span>
+                                <span className="card-text"><small className="text-body-secondary"><i className="fa-solid fa-phone"></i> {item.phone}</small></span>
+                                <span className="card-text"><small className="text-body-secondary"><i className="fa-solid fa-envelope"></i> {item.email}</small></span>
                             </div>
                             <div>
                                 {/*Aquí va el ícono de lapiz*/}
@@ -31,6 +32,7 @@ export const CardName = (props) => {
                     </div>
                 </div>
             </div>
+            ))}
         </div>
     )
     };
