@@ -1,14 +1,23 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
 
-export const Demo = () => {
+export const DemoId = () => {
 	const { store, actions } = useContext(Context);
 	const [data, setData] = useState({full_name:"", email:"", phone:"", address:"", agenda_slug:""})
-	const save = (e) => {
+	const {id} = useParams();
+
+    useEffect(() => {
+        actions.upgrade(id)
+        .then(contactData => {setData(contactData);})
+     .catch(error => {
+        console.log("error", error)
+    }); }, [actions,id]);
+
+    const save = (e) => {
 		e.preventDefault();
 		actions.createContact(data);
 		setData({full_name:"", email:"", phone:"", address:"", agenda_slug:""})

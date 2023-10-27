@@ -46,6 +46,35 @@ const getState = ({ getStore, getActions, setStore }) => {
                     });
             },
 
+            delete: (id) => {
+                const actions = getActions();
+                fetch(`https://playground.4geeks.com/apis/fake/contact/${id}`, {
+                    method: "DELETE"
+                })
+                .then (
+                    (response) => {
+                        console.log("Respuesta", response);
+                        if (response.ok) {
+                            actions.getContacts();
+                            alert("Contacto eliminado con éxito");
+                        } else {
+                            alert("Error al eliminar contacto");
+                        }
+                    }
+                ) .catch((error) => {
+                    console.log("error", error);
+                    alert("Error al eliminar contacto")
+                })
+            },
+
+            upgrade: (id) => {
+                return fetch (`https://playground.4geeks.com/apis/fake/contact/${id}`)
+                .then ((results) => results.json())
+                .catch ((error) => {
+                    console.log("error", error);
+                })
+            },
+
 			}
 		}
 	};

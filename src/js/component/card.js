@@ -5,7 +5,7 @@ import "../../styles/home.css";
 
 export const CardName = (props) => {
 
-    const {store} = useContext(Context)
+    const {store, actions} = useContext(Context)
     console.log(store.contacts)
 
 	return (
@@ -25,8 +25,14 @@ export const CardName = (props) => {
                                 <span className="card-text"><small className="text-body-secondary"><i className="fa-solid fa-envelope"></i> {item.email}</small></span>
                             </div>
                             <div>
-                                {/*Aquí va el ícono de lapiz*/}
-                                {/*Aquí va el ícono de borrar*/}
+                                <div class="d-grid gap-2">
+                                    <Link to={`/demoid/${item.id}`}>
+                                        <i className="fa-solid fa-pen-to-square"></i>
+                                    </Link>
+                                </div>
+                                <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" type="button" onClick={() => actions.delete(item.id)}><i className="fa-solid fa-trash"></i></button>
+                                </div>
                             </div>
                         </div>
                     </div>
